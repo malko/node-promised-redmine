@@ -27,7 +27,7 @@
 		"url": "https://github.com/malko/node-promised-redmine.git"
 	},
 	"scripts": {
-		"test": "TEST_REDMINE_APIKEY=e8a94353d2cbf45e302b08f6069327eeefa2cfb2 TEST_REDMINE_HOST=vivid-winter-3808.heroku.com node_modules/.bin/expresso test/*"
+		"test": "TEST_REDMINE_APIKEY= TEST_REDMINE_HOST= node_modules/.bin/expresso test/*"
 	},
 	"bugs": {
 		"url": "https://github.com/malko/node-promised-redmine/issues"

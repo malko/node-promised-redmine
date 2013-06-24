@@ -1,8 +1,6 @@
 node-promised-redmine
 ===============
 
-[![Build Status](https://secure.travis-ci.org/malko/node-promised-redmine.png)](https://secure.travis-ci.org/malko/node-promised-redmine)
-
 Redmine REST API Client for node.js implemented with promises/A+
 
 This is a modified version of the original [redmine](https://github.com/sotarok/node-redmine) module by sotarok  using [D.js](https://github.com/malko/D.js) to implement it as a [promises/A+](http://promises-aplus.github.io/promises-spec/) compatible api. 
