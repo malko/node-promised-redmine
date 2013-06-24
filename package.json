@@ -1,0 +1,48 @@
+{
+	"name": "promised-redmine",
+	"version": "0.1.0",
+	"description": "Redmine Rest API Client for node.js with Promises/A+ compliance",
+	"tags": [
+		"redmine",
+		"Promises/A+"
+	],
+	"keywords": [
+		"redmine",
+		"rest api",
+		"promises/A+",
+		"d.js"
+	],
+	"contributors": [
+		{
+			"name": "Sotaro KARASAWA",
+			"email": "sotarok@crocos.co.jp"
+		},
+		{
+			"name": "Jonathan Gotti",
+			"email": "jgotti@jgotti.net"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/malko/node-promised-redmine.git"
+	},
+	"scripts": {
+		"test": "TEST_REDMINE_APIKEY=e8a94353d2cbf45e302b08f6069327eeefa2cfb2 TEST_REDMINE_HOST=vivid-winter-3808.heroku.com node_modules/.bin/expresso test/*"
+	},
+	"bugs": {
+		"url": "https://github.com/malko/node-promised-redmine/issues"
+	},
+	"license": "MIT",
+	"main": "./lib/redmine",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+		"d.js": "0.2.x"
+  },
+	"devDependencies": {
+		"expresso": ">=0.9.2"
+	}
+}
