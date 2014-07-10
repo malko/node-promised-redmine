@@ -3,7 +3,7 @@ node-promised-redmine
 
 Redmine REST API Client for node.js implemented with promises/A+
 
-This is a modified version of the original [redmine](https://github.com/sotarok/node-redmine) module by sotarok  using [D.js](https://github.com/malko/D.js) to implement it as a [promises/A+](http://promises-aplus.github.io/promises-spec/) compatible api. 
+This is a modified version of the original [redmine](https://github.com/sotarok/node-redmine) module by sotarok  using [D.js](https://github.com/malko/D.js) to implement it as a [promises/A+](http://promises-aplus.github.io/promises-spec/) compatible api.
 
 
 Features
@@ -31,6 +31,12 @@ Main methods
 - **Projects**
   - **getProjects(params)** get a list of projects (max 100)
   - **getProject(id)** return details about a single project by its id
+- **Time Entries**
+  - **getTimeEntries(params)** returns a list of time entries
+  - **getTimeEntry(id)** returns time entry of given id
+  - **postTimeEntry(params)** returns time entry of given id
+  - **updateTimeEntry(id, params)** update time entry corresponding to the given id
+  - **deleteTimeEntry(id)** delete time entry of given id
 
 
 
