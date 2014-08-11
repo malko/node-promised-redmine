@@ -1,6 +1,6 @@
 {
   "name": "promised-redmine",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Redmine Rest API Client for node.js with Promises/A+ compliance",
   "tags": [
     "redmine",
@@ -20,6 +20,10 @@
     {
       "name": "Jonathan Gotti",
       "email": "jgotti@jgotti.net"
+    },
+    {
+      "name": "Pavel Akhmetchanov",
+      "email": "pavel.power@ya.ru"
     }
   ],
   "repository": {
