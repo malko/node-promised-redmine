@@ -9,20 +9,37 @@ This is a modified version of the original [redmine](https://github.com/sotarok/
 Features
 ---------
 * support both http / https protocols
-* support basicAuth authentification
+* support basicAuth authentication
 * compatible with promises/A+
 * simple api
 * recursively retrieve issues until given date
 
 Main methods
 ------------
+- **Settings getter/setter**
+  - _all setters return the Redmine instance and are chainable_
+  - **(get|set)ApiKey(key)** api key given by your redmine server
+  - **(get|set)Host(host)** ip or hostname of the redmine api endpoint
+  - **(get|set)BasicAuth(auth)** string used as *auth* option of the http request
+  - **(get|set)Protocol(protocol)** http or https
+  - **(get|set)PathPrefix(prefix)** path prefix to prepend to each request paths
+
+
+- **Generics**
+  - _all generic methods path doesn't require leading slash nor the .json extension e.g. for issues it can be "issues" or "issues/{id}"_
+  - **get(path, params)** get a single resource or a list or resources by giving
+  - **getAllSince(what, since, params)** helper to get all items of a collection since the given date (isoString or Date instance)
+  - **post(path, params)** create a new resource on corresponding path
+  -  **put(path, params)** update a given resource with params
+  -  **del(path, params)** remove given resource
+
 
 - **Issues**
   - **getIssues(params)** return list of issues (max 100)
   - **getIssue(id)** return an issue details by its id
-  - **getAllIssuesSince(since,params)** return all issues since given date (isoString or Date instance)
+  - **getAllIssuesSince(since, params)** return all issues since given date (isoString or Date instance)
   - **postIssue(params)** create a new issue
-  - **updateIssue(id,params)** update issue with given id
+  - **updateIssue(id, params)** update issue with given id
   - **deleteIssue(id)** delete an issue by its id
 - **Users**
   - **getUsers(params)** return list of users (max 100)
@@ -31,6 +48,7 @@ Main methods
 - **Projects**
   - **getProjects(params)** get a list of projects (max 100)
   - **getProject(id)** return details about a single project by its id
+  - **getAllProjectsSince(since, params)** return all projects updated since given date (isoString or Date instance)
 - **Time Entries**
   - **getTimeEntries(params)** returns a list of time entries
   - **getTimeEntry(id)** returns time entry of given id
@@ -39,6 +57,22 @@ Main methods
   - **deleteTimeEntry(id)** delete time entry of given id
 
 
+Basic Usage example
+-------------------
+```javascript
+var Redmine = require('promised-redmine');
+var config = {
+  host: "localhost", // required
+  apiKey: "XXXXXX", // required
+  pathPrefix: "/myRedminePath",
+  protocol: "http",
+}
+var redmineApi = new Redmine(config);
+redmineApi.getIssues()
+  .success(function(issues){ // success is an alias of then whithout the promise rejection management in D.js the underlying promise library
+    // do something with that
+  })
+```
 
 Install
 ---------
