@@ -20,6 +20,7 @@ Main methods
   - _all setters return the Redmine instance and are chainable_
   - **(get|set)ApiKey(key)** api key given by your redmine server
   - **(get|set)Host(host)** ip or hostname of the redmine api endpoint
+  - **(get|set)Port(port)** set remote server port default to 80
   - **(get|set)BasicAuth(auth)** string used as *auth* option of the http request
   - **(get|set)Protocol(protocol)** http or https
   - **(get|set)PathPrefix(prefix)** path prefix to prepend to each request paths
