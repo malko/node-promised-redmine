@@ -67,6 +67,11 @@ var config = {
   apiKey: "XXXXXX", // required
   pathPrefix: "/myRedminePath",
   protocol: "http",
+  // if using SSL settings, change protocol to https
+  // and set port to 443
+  sslCaCert: '/path/to/root/ca.pem', // defaults to null
+  sslClientCert: '/path/to/client/cert.pem', // defaults to null
+  sslClientKey: '/path/to/client/cert.key' // defaults to null
 }
 var redmineApi = new Redmine(config);
 redmineApi.getIssues()
