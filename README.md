@@ -1,7 +1,7 @@
 node-promised-redmine
 ===============
 
-Redmine REST API Client for node.js implemented with promises/A+
+Redmine REST API Client for node.js implemented with promises/A+  [![Codacy Badge](https://www.codacy.com/project/badge/c0c53b7c60dd4f35bda6bbf5d786aa79)](https://www.codacy.com/public/malko/node-promised-redmine.git)
 
 This is a modified version of the original [redmine](https://github.com/sotarok/node-redmine) module by sotarok  using [D.js](https://github.com/malko/D.js) to implement it as a [promises/A+](http://promises-aplus.github.io/promises-spec/) compatible api.
 
