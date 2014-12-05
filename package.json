@@ -1,6 +1,6 @@
 {
   "name": "promised-redmine",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Redmine Rest API Client for node.js with Promises/A+ compliance",
   "tags": [
     "redmine",
@@ -24,13 +24,13 @@
     {
       "name": "Antiokus314"
     },
-		{
-			"name": "Eric Sabelhaus",
-			"email": "eric.sabelhaus@gmail.com"
-		},
-		{
-			"name": "siavolt"
-		}
+    {
+      "name": "Eric Sabelhaus",
+      "email": "eric.sabelhaus@gmail.com"
+    },
+    {
+      "name": "siavolt"
+    }
   ],
   "repository": {
     "type": "git",
