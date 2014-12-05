@@ -24,6 +24,9 @@ Main methods
   - **(get|set)BasicAuth(auth)** string used as *auth* option of the http request
   - **(get|set)Protocol(protocol)** http or https
   - **(get|set)PathPrefix(prefix)** path prefix to prepend to each request paths
+  - **(get|set)SslCaCert(certFilePath)** path or array of path to authority certificates files to check the remote host against
+  - **(get|set)SslClientCert(certFilePath)** path to public x509 certificate file to use
+  - **setSslClientKey(keyFilePath, passPhrase)*** path to client private key file to use for SSL and associated passphrase
 
 
 - **Generics**
@@ -67,6 +70,11 @@ var config = {
   apiKey: "XXXXXX", // required
   pathPrefix: "/myRedminePath",
   protocol: "http",
+  // if using SSL settings, change protocol and port accordingly
+  sslCaCert: '/path/to/root/ca.pem', // defaults to null
+  sslClientCert: '/path/to/client/cert.pem', // defaults to null
+  sslClientKey: '/path/to/client/cert.key', // defaults to null
+  sslClientPassphrase: 'clientKeyPassphrase' // defaults to null
 }
 var redmineApi = new Redmine(config);
 redmineApi.getIssues()
