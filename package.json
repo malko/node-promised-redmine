@@ -1,6 +1,6 @@
 {
   "name": "promised-redmine",
-  "version": "0.2.6",
+  "version": "0.2.9",
   "description": "Redmine Rest API Client for node.js with Promises/A+ compliance",
   "tags": [
     "redmine",
@@ -23,6 +23,13 @@
     },
     {
       "name": "Antiokus314"
+    },
+    {
+      "name": "Eric Sabelhaus",
+      "email": "eric.sabelhaus@gmail.com"
+    },
+    {
+      "name": "siavolt"
     }
   ],
   "repository": {
@@ -43,7 +50,7 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "d.js": "0.6.x"
+    "d.js": "0.7.x"
   },
   "devDependencies": {
     "expresso": ">=0.9.2"
