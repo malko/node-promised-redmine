@@ -13,6 +13,7 @@ Features
 * compatible with promises/A+
 * simple api
 * recursively retrieve issues until given date
+* exponential backoff retries
 
 Main methods
 ------------
@@ -26,6 +27,8 @@ Main methods
   - **(get|set)PathPrefix(prefix)** path prefix to prepend to each request paths
   - **(get|set)SslCaCert(certFilePath)** path or array of path to authority certificates files to check the remote host against
   - **(get|set)SslClientCert(certFilePath)** path to public x509 certificate file to use
+  - **(get|set)maxTry(maxTry)** max number of retry on request error default to 1
+    **(get|set)maxDelay(maxDelay)** max time in ms to wait between two retry on request error default to 2000
   - **setSslClientKey(keyFilePath, passPhrase)*** path to client private key file to use for SSL and associated passphrase
 
 
@@ -60,6 +63,8 @@ Main methods
   - **updateTimeEntry(id, params)** update time entry corresponding to the given id
   - **deleteTimeEntry(id)** delete time entry of given id
 
+All request made can use a retry settings based on an exponential backoff algorithm.
+You can set thoose settings for all request using *setMaxRetry* and *setMaxDelay* methods, or on a request basis by passing a *retry* property to the *params* parameter. This *retry* property should be an object with one or two property of *maxTry* and *maxDelay* e.g. ```var params = {retry: {maxTry:3}}```
 
 Basic Usage example
 -------------------
