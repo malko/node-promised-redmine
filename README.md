@@ -3,14 +3,14 @@ node-promised-redmine
 
 Redmine REST API Client for node.js implemented with promises/A+  [![Codacy Badge](https://www.codacy.com/project/badge/c0c53b7c60dd4f35bda6bbf5d786aa79)](https://www.codacy.com/public/malko/node-promised-redmine.git)
 
-This is a modified version of the original [redmine](https://github.com/sotarok/node-redmine) module by sotarok  using [D.js](https://github.com/malko/D.js) to implement it as a [promises/A+](http://promises-aplus.github.io/promises-spec/) compatible api.
+This was a modified version of the original [redmine](https://github.com/sotarok/node-redmine) module by sotarok  using [D.js](https://github.com/malko/D.js) to implement it as a [promises/A+](http://promises-aplus.github.io/promises-spec/) compatible api. But it has been largely rewrote since and is a totally different project now.
 
 
 Features
 ---------
 * support both http / https protocols
 * support basicAuth authentication
-* compatible with promises/A+
+* compatible with promises/A+ through [D.js](https://github.com/malko/D.js)
 * simple api
 * recursively retrieve issues until given date
 * exponential backoff retries
@@ -27,14 +27,15 @@ Main methods
   - **(get|set)PathPrefix(prefix)** path prefix to prepend to each request paths
   - **(get|set)SslCaCert(certFilePath)** path or array of path to authority certificates files to check the remote host against
   - **(get|set)SslClientCert(certFilePath)** path to public x509 certificate file to use
-  - **(get|set)maxTry(maxTry)** max number of retry on request error default to 1
-    **(get|set)maxDelay(maxDelay)** max time in ms to wait between two retry on request error default to 2000
   - **setSslClientKey(keyFilePath, passPhrase)*** path to client private key file to use for SSL and associated passphrase
+  - **(get|set)MaxTry(maxTry)** max number of retry on request error default to 1
+    **(get|set)MaxDelay(maxDelay)** max time in ms to wait between two retry on request error default to 2000
+    **(get|set)Verbose(verbose)** boolean value that turn on/off console.log on errors and retries. (default setting to false)
 
 
 - **Generics**
   - _all generic methods path doesn't require leading slash nor the .json extension e.g. for issues it can be "issues" or "issues/{id}"_
-  - **get(path, params)** get a single resource or a list or resources by giving
+  - **get(path, params)** get a single resource or a list or resources
   - **getAllSince(what, since, params)** helper to get all items of a collection since the given date (isoString or Date instance)
   - **post(path, params)** create a new resource on corresponding path
   -  **put(path, params)** update a given resource with params
@@ -83,7 +84,7 @@ var config = {
 }
 var redmineApi = new Redmine(config);
 redmineApi.getIssues()
-  .success(function(issues){ // success is an alias of then whithout the promise rejection management in D.js the underlying promise library
+  .success(function(issues){ // success is an alias of then without the promise rejection management in D.js the underlying promise library
     // do something with that
   })
 ```
