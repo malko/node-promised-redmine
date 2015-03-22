@@ -1,6 +1,6 @@
 {
   "name": "promised-redmine",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Redmine Rest API Client for node.js with Promises/A+ compliance",
   "tags": [
     "redmine",
