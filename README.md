@@ -44,28 +44,32 @@ Main methods
 
 - **Issues**
   - **getIssues(params)** return list of issues (max 100)
-  - **getIssue(id)** return an issue details by its id
+  - **getIssue(id, params)** return an issue details by its id
   - **getAllIssuesSince(since, params)** return all issues since given date (isoString or Date instance)
   - **postIssue(params)** create a new issue
   - **updateIssue(id, params)** update issue with given id
-  - **deleteIssue(id)** delete an issue by its id
+  - **deleteIssue(id, params)** delete an issue by its id
 - **Users**
   - **getUsers(params)** return list of users (max 100)
-  - **getUser(id)** retrieve user details by its id
-  - **getUserCurrent()** return current user (the one corresponding to the apiKey)
+  - **getUser(id, params)** retrieve user details by its id
+  - **getUserCurrent(params)** return current user (the one corresponding to the apiKey)
 - **Projects**
   - **getProjects(params)** get a list of projects (max 100)
-  - **getProject(id)** return details about a single project by its id
+  - **getProject(id, params)** return details about a single project by its id
   - **getAllProjectsSince(since, params)** return all projects updated since given date (isoString or Date instance)
 - **Time Entries**
   - **getTimeEntries(params)** returns a list of time entries
-  - **getTimeEntry(id)** returns time entry of given id
+  - **getTimeEntry(id, params)** returns time entry of given id
   - **postTimeEntry(params)** returns time entry of given id
   - **updateTimeEntry(id, params)** update time entry corresponding to the given id
-  - **deleteTimeEntry(id)** delete time entry of given id
+  - **deleteTimeEntry(id, params)** delete time entry of given id
 
-All request made can use a retry settings based on an exponential backoff algorithm.
+Generic Parameters
+------------------
+All request made can use following additional parameters in the params argument:
+- **retry**: a retry settings based on an exponential backoff algorithm.
 You can set thoose settings for all request using *setMaxRetry* and *setMaxDelay* methods, or on a request basis by passing a *retry* property to the *params* parameter. This *retry* property should be an object with one or two property of *maxTry* and *maxDelay* e.g. ```var params = {retry: {maxTry:3}}```
+- **impersonate**: allow you to add a _X-Redmine-Switch-User_ header on a request basis. This will only work when you are authenticated as an admin user in the first place. ```var params = {impersonate: 'username'};```
 
 Basic Usage example
 -------------------
@@ -101,3 +105,9 @@ Link
 ------
 
 * [redmine api documentation](http://www.redmine.org/projects/redmine/wiki/Rest_api)
+
+How to help
+-----------
+
+Contributions are always welcome.
+I have no more redmine installation available for testing. So if you have one you can share for testing purpose, it will be of great help to this project.
