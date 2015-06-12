@@ -46,8 +46,8 @@ Main methods
   - **getIssues(params)** return list of issues (max 100)
   - **getIssue(id, params)** return an issue details by its id
   - **getAllIssuesSince(since, params)** return all issues since given date (isoString or Date instance)
-  - **postIssue(params)** create a new issue
-  - **updateIssue(id, params)** update issue with given id
+  - **postIssue(issue, params)** create a new issue
+  - **updateIssue(id, issue, params)** update issue with given id
   - **deleteIssue(id, params)** delete an issue by its id
 - **Users**
   - **getUsers(params)** return list of users (max 100)
@@ -60,8 +60,8 @@ Main methods
 - **Time Entries**
   - **getTimeEntries(params)** returns a list of time entries
   - **getTimeEntry(id, params)** returns time entry of given id
-  - **postTimeEntry(params)** returns time entry of given id
-  - **updateTimeEntry(id, params)** update time entry corresponding to the given id
+  - **postTimeEntry(timeEntry, params)** returns time entry of given id
+  - **updateTimeEntry(id, timeEntry, params)** update time entry corresponding to the given id
   - **deleteTimeEntry(id, params)** delete time entry of given id
 
 Generic Parameters
