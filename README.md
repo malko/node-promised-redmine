@@ -26,6 +26,7 @@ Main methods
   - **(get|set)BasicAuth(auth)** string used as *auth* option of the http request
   - **(get|set)Protocol(protocol)** http or https
   - **(get|set)PathPrefix(prefix)** path prefix to prepend to each request paths
+  - **(get|set)sslV3Disabled(boolean)** boolean value to disable the use of SSLv3 with the secureOptions 'SSL_OP_NO_SSLv3' flag. Defaults to false
   - **(get|set)SslCaCert(certFilePath)** path or array of path to authority certificates files to check the remote host against
   - **(get|set)SslClientCert(certFilePath)** path to public x509 certificate file to use
   - **setSslClientKey(keyFilePath, passPhrase)*** path to client private key file to use for SSL and associated passphrase
