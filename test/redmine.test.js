@@ -56,6 +56,16 @@ describe('have a request method which', function() {
 		;
 		expectDummy(redmineApi.request('get', '/testRetry', {retry: {maxTry: 3, maxDelay: 50}}), done);
 	});
+
+  [200,201,204].forEach(function(httpCode){
+    it('should resolve if http status code is '  + httpCode, function(done) {
+      mockServer.get('/myRedminePath/testApiKey')
+        .reply(httpCode, dummyObj)
+      ;
+      expectDummy(redmineApi.request('get', '/testApiKey'), done);
+    });
+  });
+
 });
 
 describe('have a get method which', function(){
