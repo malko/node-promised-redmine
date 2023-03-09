@@ -1,8 +1,7 @@
 node-promised-redmine
 ===============
 
-Redmine REST API Client for node.js implemented with promises/A+  [![Codacy Badge](https://www.codacy.com/project/badge/c0c53b7c60dd4f35bda6bbf5d786aa79)](https://www.codacy.com/public/malko/node-promised-redmine.git)
-[![Build Status](https://travis-ci.org/malko/node-promised-redmine.svg?branch=master)](https://secure.travis-ci.org/malko/node-promised-redmine)
+Redmine REST API Client for node.js implemented with promises/A+  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/78a1c34d15544b2499cf35ce99633927)](https://www.codacy.com/gh/malko/node-promised-redmine/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=malko/node-promised-redmine&amp;utm_campaign=Badge_Grade)
 
 This was a modified version of the original [redmine](https://github.com/sotarok/node-redmine) module by sotarok  using [D.js](https://github.com/malko/D.js) to implement it as a [promises/A+](http://promises-aplus.github.io/promises-spec/) compatible api. But it has been largely rewrote since and is a totally different project now.
 

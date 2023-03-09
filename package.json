@@ -1,6 +1,6 @@
 {
   "name": "promised-redmine",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Redmine Rest API Client for node.js with Promises/A+ compliance",
   "tags": [
     "redmine",
@@ -30,6 +30,11 @@
     },
     {
       "name": "siavolt"
+    },
+    {
+      "name": "Patrick Daether",
+      "email": "public@pd-digital.de",
+      "url": "http://www.pd-digital.de/"
     }
   ],
   "repository": {
