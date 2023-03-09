@@ -44,6 +44,7 @@
   "scripts": {
     "test": "mocha test/*"
   },
+  "files": ["lib/redmine.js"],
   "bugs": {
     "url": "https://github.com/malko/node-promised-redmine/issues"
   },
@@ -58,6 +59,7 @@
     "d.js": "0.7.x",
     "split-ca": "^1.0.0"
   },
+  "bundledDependencies": ["d.js"],
   "devDependencies": {
     "chai": "^3.0.0",
     "mocha": "^10.2.0",
